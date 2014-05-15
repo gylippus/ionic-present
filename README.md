@@ -1,7 +1,7 @@
 Ionic Framework, building native-quality hybrid apps with HTML5 and AngularJS
 =============
 
-[Start the presentation](http://ionicframework.com/present-ionic/slides/)
+[Start the presentation](http://ionic.thecuriosityhub.com/present-ionic/slides/)
 
 Additional Ionic Links.
 
