@@ -28,16 +28,6 @@
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-44023830-1', 'ionicframework.com');
-      ga('send', 'pageview');
-
-    </script>
 	</head>
 
 	<body>
@@ -47,19 +37,36 @@
 			<div class="slides">
 
 
-				<section>
+				<section data-background="img/tetons.jpg" class="tetons">
           <img src="img/ionic-logo.png" class="logo" width="296" height="331">
 					<h4>The beautiful, open source framework for developing hybrid mobile apps with HTML5.</h4>
           <h5 class="framework-url">
             <a href="http://ionicframework.com/" target="_blank">ionicframework.com</a>
           </h5>
+          <h5 class="framework-url presenter">
+            <a href="http://twitter.com/heryandotus" target="_blank">Presented by Ryan Hanna @heryandotus</a>
+          </h5>
 				</section>
 
-
         <section>
-          <h2>So, you want to build a native app?</h2>
+          <h2>So, you want to build an app?</h2>
         </section>
 
+        <section>
+          <h3>or</h3>
+          <p>Friend, "I have a great idea for an app, you can code right?"</p>
+        </section>
+
+        <section class="left">
+          <h3>Benefits</h3>
+          <h3>Technologies</h3>
+          <h3>Features and Components</h3>
+          <h3>App Examples</h3>
+          <h3>Rebirth of Hybrids</h3>
+          <h3>Mobile Dev Toolkit</h3>
+          <h3>Takeaways</h3>
+          <h3>Playtime</h3>
+        </section>
 
 				<section>
 					<h3>More Platforms. More Problems.</h3>
@@ -106,6 +113,7 @@
         <section>
           <h2>It's Not 2007 Anymore</h2>
           <p><span class="light-text">Mobile devices have rapidly improved!</span></p>
+          <p><span class="light-text">Hybrid app performance is finally catching up.</span></p>
         </section>
 
 
@@ -201,6 +209,29 @@
           <img src="img/ionicons.png" class="logo" width="655" height="436">
           <p>Over 500 MIT licensed font-icons included</p>
           <p><a href="http://ionicons.com/" target="_blank">ionicons.com</a></p>
+        </section>
+
+        <section>
+          <h2>Getting Started</h2>
+          <div class="left">
+            <p>install Node.js <a href="http://nodejs.org/download/">nodejs.org/download</a></p>
+            <p>install Cordova and Ionic command-line tools</p>
+            <pre><code data-trim contenteditable class="xml">
+            $ npm install -g cordova ionic
+            </code></pre>
+            <p>start Ionic project</p>
+            <pre><code data-trim contenteditable class="xml">
+            $ ionic start myApp sidemenu
+            </code></pre>
+            <p>build and run</p>
+            <pre><code data-trim contenteditable class="xml">
+            $ cd myApp
+$ ionic platform add ios
+$ ionic build ios
+$ ionic emulate ios
+            </code></pre>
+            <p>have fun</p>
+          </div>
         </section>
 
 
@@ -401,29 +432,65 @@ $ionicActionSheet.show({
           </div>
         </section>
 
-
-        <section>
-          <h2><strong>MIT LICENSED</strong></h2>
-          <h6 class="light-text">Free to use (even commercially)</h6>
+        <section class="left">
+          <h2>App Examples</h2>
+          <div class="example-app">
+            <img src="img/keychainapp.png" />
+            <a href="https://www.keychainlogistics.com/">Keychain</a>
+          </div>
+          <div class="example-app">
+            <img src="img/chefsteps.png" />
+            <a href="http://chefsteps.com/">ChefSteps</a>
+          </div>
+          <div class="example-app">
+            <img src="img/habitrpg.png" />
+            <a href="https://habitrpg.com/">HabitRPG</a>
+          </div>
+          <div class="example-app">
+            <img src="img/craftboom.png" />
+            <a href="http://www.craft-boom.com/">Craft Boom</a>
+          </div>
+          <footer class="footer">showcase.ionicframework.com</footer>
         </section>
 
-
-        <section>
-          <h2><strong>COMMUNITY POWERED</strong></h2>
-          <h6 class="light-text">Active developer forum and GitHub repo</h6>
+        <section class="left">
+          <h2>Rebirth of Hybrids</h2>
+          <p>PhoneGap + UI + MVC (BBC Olympics, Untappd, Sworkit)<p>
+          <p>Native navigation + web content (Basecamp)</p>
         </section>
 
-
-        <section>
-          <h2>Get Started with Ionic!</h2>
-          <br />
-          <p><strong>Visit the Community Forum</strong><br />
-          <a href="http://forum.ionicframework.com" target="_blank"><span class="light-text">forum.ionicframework.com</span></a></p>
-          <br />
-          <p><strong>Contribute on GitHub</strong><br />
-          <a href="https://github.com/driftyco/ionic" target="_blank"><span class="light-text">github.com/driftyco/ionic</span></a></p>
+         <section class="left">
+          <h2>Reality Check</h2>
+          <p>- Performance is certainly improving, but Native still wins</p>
+          <p>- Like many mobile frameworks, a lot of time is still spent tweaking against what is provided</p>
+          <p>- More advanced plugins will take a bit of native code</p>
         </section>
 
+        <section class="toolkit">
+          <a href="http://thenounproject.com/term/toolbox/49959/"> <img src="img/tools.png" class="logo toolkit"height="250"></a>
+          <h2>Mobile Dev Toolkit</h2>
+          <ul>
+            <li><a href="http://icomoon.io/">IcoMoon</a><p> build your own icon fonts</p></li>
+            <li><a href="http://thenounproject.com/">NounProject</a><p> great icons, creative commons with attribution</p></li>
+            <li><a href="https://github.com/mozilla/localForage">localForage</a><p> persistant data library from Mozilla</p></li>
+            <li><a href="https://groups.google.com/forum/#!forum/phonegap">PhoneGap Google Group</a></li>
+            <li><a href="http://phonegap.com/blog/">PhoneGap Blog</a></li>
+            <li><a href="http://plugreg.com/">PlugReg</a><p> search PhoneGap Plugins</p></li>
+          </ul>
+        </section>
+
+        <section class="left">
+          <h2>Takeaways</h2>
+          <h3 style="color:black">YOU CAN BUILD AN APP</h3>
+          <p>- Go from nothing to something</p>
+          <p>- Ionic is just one option, but it is a great option</p>
+          <p>- Actually an incredibly useful/visual way to learn AngularJS</p>
+          <p>Challenge: Play on an idea for just 4 hours</p>
+        </section>
+
+        <section class="left">
+          <h2>Playtime</h2>
+        </section>
 
 				<section>
 					<h2><code>&lt;/html&gt;</code></h2>
@@ -457,6 +524,11 @@ $ionicActionSheet.show({
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+      var backgrounds = document.getElementsByClassName('tetons');
+      for (var i = 0; i < backgrounds.length; ++i) {
+          var item = backgrounds[i];  
+          item.parentNode.parentNode
+      }
 		</script>
 
 	</body>

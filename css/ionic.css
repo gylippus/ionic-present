@@ -211,4 +211,45 @@ body {
   margin-left: 40px;
 }
 
+/* Custom CSS */
+.reveal .presenter a:not(.image) {
+  color: #4D84E0;
+}
 
+section.tetons{
+  background-color:rgba(0,0,0,0.5);
+  border-radius:5px;
+}
+
+.reveal .slides>section.tetons, .reveal .slides>section.tetons>section.tetons{
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.left{
+  text-align:left;
+}
+
+.reveal section img.logo.toolkit{
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+.toolkit li *{
+  display:inline;
+}
+
+.toolkit li a:not(.image){
+  color:#040202;
+}
+
+.example-app{
+  display:inline-block;
+}
+.example-app img{
+  display:block;
+}
+
+.example-app img{
+  width:220px;
+}
