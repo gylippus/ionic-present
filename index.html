@@ -39,7 +39,7 @@
 
 				<section data-background="img/tetons.jpg" class="tetons">
           <img src="img/ionic-logo.png" class="logo" width="296" height="331">
-					<h4>The beautiful, open source framework for developing hybrid mobile apps with HTML5.</h4>
+					<h4>The beautiful, open source framework for building awesome hybrid mobile apps with HTML5.</h4>
           <h5 class="framework-url">
             <a href="http://ionicframework.com/" target="_blank">ionicframework.com</a>
           </h5>
@@ -58,19 +58,20 @@
         </section>
 
         <section class="left">
-          <h3>Benefits</h3>
-          <h3>Technologies</h3>
+          <h3 style="float:right;opacity:0.6">Overview</h3>
+          <h3 style="float:left">Benefits</h3>
+          <h3 style="clear:both">Technologies</h3>
           <h3>Features and Components</h3>
           <h3>App Examples</h3>
           <h3>Rebirth of Hybrids</h3>
-          <h3>Mobile Dev Toolkit</h3>
           <h3>Takeaways</h3>
           <h3>Playtime</h3>
+          <h3>Mobile Dev Toolkit</h3>
         </section>
 
 				<section>
 					<h3>More Platforms. More Problems.</h3>
-          <p style="margin-top: 60px">
+          <p style="margin-top: 20px">
             <img src="img/apple.png" class="logo" width="210" height="210" style="margin-right: 15px">
             <img src="img/android.png" class="logo" width="210" height="210" style="margin-left: 15px; margin-right: 15px">
             <img src="img/windows.png" class="logo" width="210" height="210" style="margin-left: 15px; margin-right: 15px">
@@ -221,7 +222,7 @@
             </code></pre>
             <p>start Ionic project</p>
             <pre><code data-trim contenteditable class="xml">
-            $ ionic start myApp sidemenu
+            $ ionic start myApp tabs
             </code></pre>
             <p>build and run</p>
             <pre><code data-trim contenteditable class="xml">
@@ -231,9 +232,13 @@ $ ionic build ios
 $ ionic emulate ios
             </code></pre>
             <p>have fun</p>
+            <a href="http://ionicframework.com/getting-started/">Ionic Getting Started</a>
           </div>
         </section>
 
+        <section>
+          <h2>Ionic Components</h2>
+        </section>
 
         <section>
           <div class="col preview">
@@ -464,6 +469,191 @@ $ionicActionSheet.show({
           <p>- Performance is certainly improving, but Native still wins</p>
           <p>- Like many mobile frameworks, a lot of time is still spent tweaking against what is provided</p>
           <p>- More advanced plugins will take a bit of native code</p>
+          <h4>Debugging</h4>
+        </section>
+
+        <section class="left">
+          <h2>Takeaways</h2>
+          <h3 style="color:black">YOU CAN BUILD AN APP</h3>
+          <p>- Go from nothing to something</p>
+          <p>- Ionic is just one option, but it is a great option</p>
+          <p>- Actually an incredibly useful/visual way to learn AngularJS</p>
+          <p>Challenge: Play on an idea for just 4 hours</p>
+        </section>
+
+        <section data-background="#51D577" class="left">
+          <h2>Playtime</h2>
+          <p>The following slides are a very basic tutorial for manipulating an Ionic seed project. Project would be started as follows:</p>
+          <pre><code data-trim contenteditable class="xml">
+            $ npm install -g cordova ionic
+            </code></pre>
+            <pre><code data-trim contenteditable class="xml">
+            $ ionic start myApp tabs
+            </code></pre>
+            <pre><code data-trim contenteditable class="xml">
+            $ cd myApp
+$ ionic platform add ios
+$ ionic build ios
+$ ionic emulate ios
+            </code></pre>
+            <p>repeat this after each edit made in the www folder</p>
+            <pre><code data-trim contenteditable class="xml">
+$ ionic build ios
+$ ionic emulate ios
+            </code></pre>
+        </section>
+
+        <section data-background="#51D577" class="left">
+          <h2>Wait, what is happening??!!</h2>
+          <p class="subheader">very basic overview..</p>
+          <p class="grey">'build' compiles app from www folder (assets) and config.xml (preferences)</p>
+          <p>HTML/CSS/Javascript is wrapped into a webview</p>
+          <p class="grey">index.html loads Ionic CSS, Ionic JS, cordova.js, and our AngularJS app, ng-app="starter"</p>
+          <p>ion-nav-bar and ion-nav-view are updated by js and templates</p>
+        </section>
+
+        <section data-background="#51D577" class="left">
+          <h2>Ionic Land</h2>
+          <p class="subheader">very basic overview of AngularJS <b>in this example</b></p>
+          <p class="grey">app.js - routes setup & "onload" function</p>
+          <p>controller.js - relays data and actions within scope to view</p>
+          <p class="grey">services.js - example factory for returning static data</p>
+          <p>templates - individual screens html</p>
+        </section>
+
+        <section data-background="#51D577" class="left">
+            <p>1. Change 'Friends' to 'Events' in tabs.html, text only</p>
+          <pre><code data-trim contenteditable class="js">
+<ion-tab title="Events" icon="icon ion-heart" href="#/tab/friends">
+    <ion-nav-view name="tab-friends"></ion-nav-view>
+</ion-tab></code></pre>
+          <p>//Note, at this point you could replace all mentions of 'friend' with 'event'. We will not do this now.</p>
+        </section>
+
+        <section data-background="#51D577" class="left">
+            <p>2. Retrieve data for Asyncjs events</p>
+            <p>//Add to controller.js</p>
+          <pre><code data-trim contenteditable class="js">
+.controller('FriendsCtrl', function($rootScope, $scope, $http, Friends) {
+    $http.get('http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=http://feeds.feedburner.com/asyncjs').then(function(resp) {
+       console.log('Success');
+       $scope.friends = resp.data.responseData.feed.entries;
+       //rootScope is not the best option, but works for demo purposes
+       $rootScope.friends = resp.data.responseData.feed.entries;
+       }, function(err) {
+       console.error('ERROR', err);
+    })
+    $ionicPopup.prompt({
+      title: 'Password Check',
+      template: 'Enter your secret password',
+      inputType: 'password',
+      inputPlaceholder: 'Your password'
+    }).then(function(res) {
+      console.log('Your password is', res);
+    });
+})
+
+.controller('FriendDetailCtrl', function($rootScope, $scope, $stateParams) {
+    $scope.friend = $rootScope.friends[$stateParams.friendId];
+})</code></pre>
+          <p>//Homework, move $http to a factory in services.js</p>
+        </section>
+
+        <section data-background="#51D577" class="left">
+            <p>3. Display $http results in a list view</p>
+            <p>//Add to tab-friends.html</p>
+          <pre><code data-trim contenteditable class="js">
+<ion-view title="Events">
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{$index}}">
+        {{friend.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view></code></pre>
+          <p>//Homework, add ng-click events to option buttons</p>
+        </section>
+
+        <section data-background="#51D577" class="left">
+            <p>4. Display retrieved data in more detail</p>
+            <p>//Add to friend-detail.html</p>
+          <pre><code data-trim contenteditable class="js">
+<ion-view title="{{friend.title}}">
+  <ion-content has-header="true" padding="true">
+      <h3>{{friend.title}}</h3>
+      <div ng-bind-html="friend.content" class="friend-details"></div>
+  </ion-content>
+</ion-view></code></pre>
+          <p>//Homework, style to your liking</p>
+        </section>
+
+        <section data-background="#51D577" class="left">
+            <p>5. Learn about styling the application</p>
+            <p>//Add to style.css</p>
+          <pre><code data-trim contenteditable class="js">
+.text-box{
+  margin-top:20px;
+  height:100px;
+    min-height:200px;
+    font-size:18px;
+    padding:10px 2px;
+  border:1px solid black;
+}
+h3{
+    color:#e52222;
+}
+.event-details p:nth-of-type(1){
+    background-color:rgb(236, 236, 236);
+    padding:3px;
+    border-bottom:1px solid rgba(0,0,0,0.1)
+}
+.bar.bar-stable{
+  background-color: #FFA958;
+}</code></pre>
+          <p>//Homework, continue to style elements</p>
+        </section>
+
+        <section data-background="#51D577" class="left">
+            <p>6. Add username prompt to Account tab</p>
+            <p>//Replace in controllers.js</p>
+          <pre><code data-trim contenteditable class="js">
+.controller('AccountCtrl', function($scope, $ionicPopup) {
+
+  $ionicPopup.prompt({
+    title: 'Fancy Login',
+    subtitle: 'Enter your username',
+    inputType: 'text',
+    inputPlaceholder: 'Username'
+    }).then(function(res) {
+      if (res){
+        $scope.showAlert(res);
+      }
+  });
+
+  $scope.showAlert = function(username) {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Welcome!',
+      content: username
+    });
+      alertPopup.then(function(res) {
+      console.log('Alert closed');
+    })
+  }
+     
+});</code></pre>
+          <p>//Homework, continue to style elements</p>
+        </section>
+
+        <section data-background="#51D577" class="left">
+          <h2>Looking for more?</h2>
+          <h3>Here are a few ideas for further exploring:</h3>
+          <p>1. Add a new tab view</p>
+          <p>2. Add a button and control call an ng-click event</p>
+          <p>3. Add the Email Composer plugin: <a href="https://github.com/katzer/cordova-plugin-email-composer">github</a></p>
+          <p>4. Change the icon and Splashscreen</p>
+          <p>5. Build for Android!</p>
+          <p>6. Much much more at <a href="http://learn.ionicframework.com">learn.ionicframework.com</a></p>
         </section>
 
         <section class="toolkit">
@@ -479,23 +669,10 @@ $ionicActionSheet.show({
           </ul>
         </section>
 
-        <section class="left">
-          <h2>Takeaways</h2>
-          <h3 style="color:black">YOU CAN BUILD AN APP</h3>
-          <p>- Go from nothing to something</p>
-          <p>- Ionic is just one option, but it is a great option</p>
-          <p>- Actually an incredibly useful/visual way to learn AngularJS</p>
-          <p>Challenge: Play on an idea for just 4 hours</p>
-        </section>
-
-        <section class="left">
-          <h2>Playtime</h2>
-        </section>
-
 				<section>
-					<h2><code>&lt;/html&gt;</code></h2>
           <h3><a href="http://ionicframework.com/" target="_blank">ionicframework.com</a></h3>
           <h3><a href="https://twitter.com/ionicframework" target="_blank">@ionicframework</a></h3>
+          <h2><code>&lt;/html&gt;</code></h2>
 				</section>
 
 

@@ -235,6 +235,7 @@ section.tetons{
   margin-bottom:0px;
 }
 
+
 .toolkit li *{
   display:inline;
 }
@@ -252,4 +253,15 @@ section.tetons{
 
 .example-app img{
   width:220px;
+}
+.reveal a:not(.image) {
+  color: #9BF4FF;
+}
+.reveal p.grey, .reveal h3.grey{
+  color:grey;
+}
+.reveal p.subheader{
+  font-size:28px;
+  color:black;
+  margin:-30px 0px 20px 10px;
 }
