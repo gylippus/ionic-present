@@ -265,3 +265,12 @@ section.tetons{
   color:black;
   margin:-30px 0px 20px 10px;
 }
+h3.emphasis{
+  color: rgb(115, 234, 226);
+  font-weight: 800;
+  font-style: italic;
+}
+p.emphasis{
+  color: rgb(115, 234, 226);
+  font-weight: 400;
+}

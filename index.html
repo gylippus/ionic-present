@@ -23,6 +23,9 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="css/ionicons.css">
+
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -39,7 +42,7 @@
 
 				<section data-background="img/tetons.jpg" class="tetons">
           <img src="img/ionic-logo.png" class="logo" width="296" height="331">
-					<h4>The beautiful, open source framework for building awesome hybrid mobile apps with HTML5.</h4>
+					<h4>Building awesome hybrid mobile apps with HTML5 and AngularJS</h4>
           <h5 class="framework-url">
             <a href="http://ionicframework.com/" target="_blank">ionicframework.com</a>
           </h5>
@@ -50,12 +53,9 @@
 
         <section>
           <h2>So, you want to build an app?</h2>
+          <h4>(Spoiler alert: you can)</h4>
         </section>
 
-        <section>
-          <h3>or</h3>
-          <p>Friend, "I have a great idea for an app, you can code right?"</p>
-        </section>
 
         <section class="left">
           <h3 style="float:right;opacity:0.6">Overview</h3>
@@ -69,6 +69,7 @@
           <h3>Mobile Dev Toolkit</h3>
         </section>
 
+
 				<section>
 					<h3>More Platforms. More Problems.</h3>
           <p style="margin-top: 20px">
@@ -78,7 +79,7 @@
             <img src="img/firefoxos.png" class="logo" width="210" height="210" style="margin-left: 15px;">
           </p>
           <p><span class="light-text">
-            Why are we still coding for multiple platforms?
+            Sadly, we don't all have multiple native development teams.
           </span></p>
 				</section>
 
@@ -90,12 +91,8 @@
             <li>Entirely separate code bases</li>
             <li>Time consuming &amp; expensive development</li>
             <li>Diminishing returns</li>
+            <h4 class="light-text">Is there an alternative?</h4>
           </ul>
-        </section>
-
-
-        <section>
-          <h2>Is there an alternative?</h2>
         </section>
 
 
@@ -112,9 +109,12 @@
 
 
         <section>
-          <h2>It's Not 2007 Anymore</h2>
-          <p><span class="light-text">Mobile devices have rapidly improved!</span></p>
-          <p><span class="light-text">Hybrid app performance is finally catching up.</span></p>
+          <h2>"I tried PhoneGap once and it was slooooooowwwwww"</h2><br/>
+          <div class="left">
+           <h4>Good News:</h4>
+           <p><span>Mobile devices have rapidly improved!</span></p>
+           <p><span >Hybrid app performance is finally catching up.</span></p>
+          </div>
         </section>
 
 
@@ -133,7 +133,7 @@
         <section>
           <img src="img/ionic-logo.png" class="logo" width="296" height="331">
           <blockquote>
-            &ldquo;Hello.&rdquo;
+            &ldquo;Our Hero&rdquo;
           </blockquote>
         </section>
 
@@ -202,38 +202,6 @@
             <li>Clean and simple</li>
             <li>Easy to customize</li>
           </ul>
-        </section>
-
-
-        <section>
-          <h2>Ionicons</h2>
-          <img src="img/ionicons.png" class="logo" width="655" height="436">
-          <p>Over 500 MIT licensed font-icons included</p>
-          <p><a href="http://ionicons.com/" target="_blank">ionicons.com</a></p>
-        </section>
-
-        <section>
-          <h2>Getting Started</h2>
-          <div class="left">
-            <p>install Node.js <a href="http://nodejs.org/download/">nodejs.org/download</a></p>
-            <p>install Cordova and Ionic command-line tools</p>
-            <pre><code data-trim contenteditable class="xml">
-            $ npm install -g cordova ionic
-            </code></pre>
-            <p>start Ionic project</p>
-            <pre><code data-trim contenteditable class="xml">
-            $ ionic start myApp tabs
-            </code></pre>
-            <p>build and run</p>
-            <pre><code data-trim contenteditable class="xml">
-            $ cd myApp
-$ ionic platform add ios
-$ ionic build ios
-$ ionic emulate ios
-            </code></pre>
-            <p>have fun</p>
-            <a href="http://ionicframework.com/getting-started/">Ionic Getting Started</a>
-          </div>
         </section>
 
         <section>
@@ -437,6 +405,39 @@ $ionicActionSheet.show({
           </div>
         </section>
 
+                <section>
+          <h2>Ionicons</h2>
+          <img src="img/ionicons.png" class="logo" width="655" height="436">
+          <p>Over 500 MIT licensed font-icons included</p>
+          <p><a href="http://ionicons.com/" target="_blank">ionicons.com</a></p>
+        </section>
+
+
+        <section>
+          <h2>Is it difficult?</h2>
+          <div class="left">
+            <p>install Node.js <a href="http://nodejs.org/download/">nodejs.org/download</a></p>
+            <p>install Cordova and Ionic command-line tools</p>
+            <pre><code data-trim contenteditable class="xml">
+            $ npm install -g cordova ionic
+            </code></pre>
+            <p>start Ionic project</p>
+            <pre><code data-trim contenteditable class="xml">
+            $ ionic start myApp tabs
+            </code></pre>
+            <p>build and run</p>
+            <pre><code data-trim contenteditable class="xml">
+            $ cd myApp
+$ ionic platform add ios
+$ ionic build ios
+$ ionic emulate ios
+            </code></pre>
+            <p>have fun</p>
+            <a href="http://ionicframework.com/getting-started/">Ionic Getting Started</a>
+          </div>
+        </section>
+
+
         <section class="left">
           <h2>App Examples</h2>
           <div class="example-app">
@@ -459,26 +460,9 @@ $ionicActionSheet.show({
         </section>
 
         <section class="left">
-          <h2>Rebirth of Hybrids</h2>
+          <h2>Hybrid Models</h2>
           <p>PhoneGap + UI + MVC (BBC Olympics, Untappd, Sworkit)<p>
           <p>Native navigation + web content (Basecamp)</p>
-        </section>
-
-         <section class="left">
-          <h2>Reality Check</h2>
-          <p>- Performance is certainly improving, but Native still wins</p>
-          <p>- Like many mobile frameworks, a lot of time is still spent tweaking against what is provided</p>
-          <p>- More advanced plugins will take a bit of native code</p>
-          <h4>Debugging</h4>
-        </section>
-
-        <section class="left">
-          <h2>Takeaways</h2>
-          <h3 style="color:black">YOU CAN BUILD AN APP</h3>
-          <p>- Go from nothing to something</p>
-          <p>- Ionic is just one option, but it is a great option</p>
-          <p>- Actually an incredibly useful/visual way to learn AngularJS</p>
-          <p>Challenge: Play on an idea for just 4 hours</p>
         </section>
 
         <section data-background="#51D577" class="left">
@@ -506,19 +490,19 @@ $ ionic emulate ios
         <section data-background="#51D577" class="left">
           <h2>Wait, what is happening??!!</h2>
           <p class="subheader">very basic overview..</p>
-          <p class="grey">'build' compiles app from www folder (assets) and config.xml (preferences)</p>
-          <p>HTML/CSS/Javascript is wrapped into a webview</p>
-          <p class="grey">index.html loads Ionic CSS, Ionic JS, cordova.js, and our AngularJS app, ng-app="starter"</p>
-          <p>ion-nav-bar and ion-nav-view are updated by js and templates</p>
+          <p><i class="icon ion-hammer"></i> 'build' compiles app from www folder (assets) and config.xml (preferences)</p>
+          <p><i class="icon ion-ios7-world"></i> HTML/CSS/Javascript is wrapped into a webview</p>
+          <p><i class="icon ion-ionic"></i> index.html loads Ionic CSS, Ionic JS, cordova.js, and our AngularJS app, ng-app="starter"</p>
+          <p><i class="icon ion-navigate"></i> ion-nav-bar and ion-nav-view are updated by js and templates</p>
         </section>
 
         <section data-background="#51D577" class="left">
           <h2>Ionic Land</h2>
           <p class="subheader">very basic overview of AngularJS <b>in this example</b></p>
-          <p class="grey">app.js - routes setup & "onload" function</p>
-          <p>controller.js - relays data and actions within scope to view</p>
-          <p class="grey">services.js - example factory for returning static data</p>
-          <p>templates - individual screens html</p>
+          <p><i class="icon ion-map"></i> app.js - routes setup & "onload" function</p>
+          <p><i class="icon ion-speedometer"></i> controller.js - relays data and actions within scope to view</p>
+          <p><i class="icon ion-stats-bars"></i> services.js - example factory for returning static data</p>
+          <p><i class="icon ion-eye"></i> templates - individual screens html</p>
         </section>
 
         <section data-background="#51D577" class="left">
@@ -657,7 +641,7 @@ h3{
         </section>
 
         <section class="toolkit">
-          <a href="http://thenounproject.com/term/toolbox/49959/"> <img src="img/tools.png" class="logo toolkit"height="250"></a>
+          <a href="http://thenounproject.com/term/toolbox/49959/"> <img src="img/tools.png" class="logo toolkit"height="150"></a>
           <h2>Mobile Dev Toolkit</h2>
           <ul>
             <li><a href="http://icomoon.io/">IcoMoon</a><p> build your own icon fonts</p></li>
@@ -667,6 +651,22 @@ h3{
             <li><a href="http://phonegap.com/blog/">PhoneGap Blog</a></li>
             <li><a href="http://plugreg.com/">PlugReg</a><p> search PhoneGap Plugins</p></li>
           </ul>
+        </section>
+
+        <section class="left">
+          <h2>Reality Check</h2>
+          <p>- Performance is certainly improving, but Native still wins</p>
+          <p>- Like many mobile frameworks, a lot of time is still spent tweaking against what is provided</p>
+          <p>- More advanced plugins will take a bit of native code</p>
+          <p>- Debugging various by platform</p>
+        </section>
+
+        <section class="left">
+          <h2>Takeaways</h2>
+          <h3 class="emphasis">YOU CAN BUILD AN APP</h3>
+          <p>- Ionic is just one option, but it is a great option</p>
+          <p>- Actually an incredibly useful/visual way to learn AngularJS</p>
+          <p class="emphasis">Challenge: Experiment for 4 hours.</p>
         </section>
 
 				<section>
